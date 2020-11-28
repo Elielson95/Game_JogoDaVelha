@@ -6,8 +6,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -44,13 +42,14 @@ public class Tabuleiro {
 	int jogadorVez = jg1.getVez();
 	
 	Bloco[] blocos = new Bloco[9];
-	Timer timed = new Timer();
+	Timer timed; 
 		
 	JPanel pTela = new JPanel(new GridLayout(3, 3, 10, 10));
 	JLabel lInformacao = new JLabel("Jogador: " + jg1.getNome()/* + " " + jg1.getSobrenome() + " - " + jg1.getIdade() + " anos"*/);
 	JLabel lClock = new RelogioLabel();
 	
 	public Tabuleiro(Mesa novo) {
+		timed = new Timer(lClock);
 		timed.start();
 		novo.add(BorderLayout.CENTER, pTela);
 		novo.add(BorderLayout.NORTH, lInformacao);
@@ -72,8 +71,8 @@ public class Tabuleiro {
 		
 	}
 	
-	ImageIcon iconJedi = new ImageIcon(getClass().getResource("/imagens/jedi.jpg"));
-	ImageIcon iconSith = new ImageIcon(getClass().getResource("/imagens/sith.jpg"));
+	ImageIcon iconJedi = new ImageIcon(getClass().getResource("/br.ucsal.pooa.images/jedi.jpg"));
+	ImageIcon iconSith = new ImageIcon(getClass().getResource("/br.ucsal.pooa.images/sith.jpg"));
 	int contJog = 9;
 	
 	public class Bloco extends JButton {

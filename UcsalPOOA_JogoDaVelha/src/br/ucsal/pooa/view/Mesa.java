@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class Mesa extends JFrame {
 	
 	public Mesa() {
-		setTitle("Jogo da Velha");
+		setTitle("Jogo da Velha - Star Wars");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(600,600);
 		setLocationRelativeTo(null);
