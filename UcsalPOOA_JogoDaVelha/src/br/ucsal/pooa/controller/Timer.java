@@ -1,13 +1,16 @@
 package br.ucsal.pooa.controller;
 
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Timer extends Thread {
 
 	private int num = 60;
+	private JLabel relogio;
 
-	public Timer() {
+	public Timer(JLabel relogio) {
 		super();
+		this.relogio = relogio;
 	}
 
 	public Timer(int num) {
@@ -19,13 +22,15 @@ public class Timer extends Thread {
 	public void run() {
 		super.run();
 		while (num >= 0) {
+			relogio.setText(num + " segundos");
 			try {
 				Thread.sleep(1000);
-				if (num > 10 && num % 60 == 0) {
+				if (num == 60) {
 					JOptionPane.showMessageDialog(null, "O jogo encerra em " + num + " segundos.");
-				} else if (num < 10 && num % 5 == 0) {
+				} else if (num == 10) {
 					JOptionPane.showMessageDialog(null, "O jogo encerra em " + num + " segundos.");
 				} else if (num == 0) {
+					JOptionPane.showMessageDialog(null, "Jogo encerrado.");
 					System.exit(0);
 				}
 				num--;

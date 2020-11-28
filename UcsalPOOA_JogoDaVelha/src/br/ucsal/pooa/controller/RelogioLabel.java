@@ -8,9 +8,11 @@ import javax.swing.Timer;
 public class RelogioLabel extends JLabel {
 
     public RelogioLabel() {
-        Timer t = new Timer(1000, e -> setText(getDateTime()));
-        t.setInitialDelay(0);
-        t.start();
+        //Timer t = new Timer(1000, e -> setText(getDateTime()));
+        //t.setInitialDelay(0);
+        //t.start();
+    	
+    	
     }
 
     private String getDateTime() {
